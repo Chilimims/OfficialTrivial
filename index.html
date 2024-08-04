@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon1.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIVIAL</title>
+    <link rel="stylesheet" href="trivial.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="settingsContainer" id="settingsContainer">
+        <button class="settingsButton" id="settingsButton" onclick="openSettings()">
+            <i class="fas fa-cog"></i>
+        </button>
+    </div>
+    <div class="leaderboardContainer" id="leaderboardContainer">
+        <button class="leaderboardButton" id="leaderboardButton" onclick="openLeaderboard()">
+            <i class="fas fa-trophy"></i>
+        </button>
+    </div>
+
+    
+
+    <div class="settingsMenu" id="settingsMenu">
+        <button class="xButton" id="xButton" onclick="closeSettings()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="settingstitle" id="settingstitle">
+            Settings
+        </div>
+        
+        <div>
+            
+        </div>
+
+        <div>
+            
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="leaderboardMenu" id="leaderboardmenu">
+        <p>hi</p>
+    </div>
+
+    <script>
+        let overlay = document.getElementById("overlay");
+        let settings = document.getElementById("settingsMenu")
+        let leaderboards = document.getElementById("leaderboardMenu")
+        const themeToggle = document.getElementById("themeToggle");
+
+        overlay.addEventListener("click", () => {
+            settings.classList.remove("open-settings");
+            overlay.classList.remove("show-overlay");
+
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+
+            const settingsButtonElements = document.querySelectorAll('.settingsButton');
+            settingsButtonElements.forEach(element => {
+            element.classList.toggle('dark-theme');
+            });
+
+            
+            
+        }
+
+        function openSettings(){
+            settings.classList.add("open-settings")
+            overlay.classList.add("show-overlay");
+        }
+
+        function closeSettings() {
+            settings.classList.remove("open-settings");
+            overlay.classList.remove("show-overlay");
+        }
+
+        function openLeaderboard(){
+            leaderboards.classList.add("open-leaderboard")
+            overlay.classList.add("show-overlay");
+        }
+
+        
+    </script>
+
+    <section class="wrapper2">
+        <div class="top">Trivial</div>
+        <div class="bottom" aria-hidden="true">Trivial</div>
+      </section>
+
+    <div class="container" id="popup">
+
+        <h2 class="how">How to Play?</h2>
+        <p class="rules">Lorem ipsum dolor sit amet, consectesafsdfasdfasdfaaturconsectesafsdfasdfasdfaatur adipisicing elit. Excepturi sapiente numquam modi quidem minus ab nam quos libero perspiciatis, quasi deserunt qui eos! Error recusandae blanditiis tenetur perferendis ab laudantium?</p>
+        <button class="start" onclick="closePopup()"><h3 class="startbtn">START</h3></button>
+
+    </div>
+
+    
+    <script>
+        let popup=document.getElementById("popup")
+
+        function closePopup(){
+            popup.classList.add("close-popup")
+        }
+    </script>
+
+
+    <div class="question">
+        <p class="questiontext" id="questiontext">d</p>
+    </div>
+    
+
+   <div class="formContainer">
+    <form class="form" id="form" action="" autocomplete="off">
+        <div id = "wrapper" class="wrapper">
+        <input id="autocomplete-input" class="guess" type="text" placeholder="Guess a player. . .">
+    
+        </div>
+
+    </form>
+    </div>
+
+    <div class="correctbox" id="correctbox">
+        <h1>Correct!</h1>
+    </div>
+
+    <div class="failbox" id="failbox">
+        <h1>Fail!</h1>
+    </div>
+    
+    <div id = "guessboxes1" class = "guessboxes">
+        1
+    </div>  
+    <div id = "guessboxes2" class = "guessboxes">
+        2
+    </div> 
+    <div id = "guessboxes3" class = "guessboxes">
+        3
+    </div> 
+    <div id = "guessboxes4" class = "guessboxes">
+        4
+    </div> 
+    <div id = "guessboxes5" class = "guessboxes">
+        5
+    </div> 
+    <div id = "guessboxes6" class = "guessboxes">
+        6
+    </div> 
+    
+    <div class="questionContainer" id="questionContainer" >
+        <button class="nextButton" id="nextButton" onclick="nextRound()">
+            Next
+        </button>
+    </div>
+
+    
+    <!--script-->
+    <script src="trivial.js"></script>
+
+</body>
+</html>
