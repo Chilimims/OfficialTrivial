@@ -220,6 +220,8 @@ function nextRound() {
   const failbox = document.getElementById('failbox');
   failbox.style.visibility = 'hidden';
 
+  displayQuestion();
+
   // Reset game state
   gameEnded = false;
   currentGuessIndex = 0;
